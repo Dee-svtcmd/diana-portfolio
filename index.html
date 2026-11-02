@@ -48,7 +48,7 @@
         <h3>MedCheck: Medication Scheduling and Monitoring Mobile App</h3>
         <p class="meta">Capstone Project, STI College Cotabato, 2026 | Assistant Developer and Documenter | .NET MAUI (C#, XAML) and Firebase</p>
         <ul>
-          <li>Developed a mobile application for medication scheduling, tracking, and reminders using .NET MAUI (C#, XAML) and Firebase.</li>
+          <li>Developed a mobile application for medication scheduling, tracking, and reminders.</li>
           <li>Designed and implemented features for patients and caregivers, including flexible medication frequency options, dose-time preview, medicine supply tracking, and caregiver-patient account linking.</li>
           <li>Tested and debugged data synchronization, scheduling, and notification issues across patient and caregiver accounts.</li>
           <li>Redesigned the user interface for elderly-friendly use, based on target mockups and user needs.</li>
@@ -58,7 +58,7 @@
       </article>
     </section>
 
-    <!-- PROJECT SHOWCASE (continuous marquee) -->
+    <!-- PROJECT SHOWCASE (continuous marquee, click a project for details) -->
     <section id="projects" class="showcase">
       <div class="showcase-head">
         <h2>Project Showcase</h2>
@@ -68,7 +68,7 @@
           <div class="marquee-set">
 
             <!-- MedCheck screenshots -->
-            <article class="slide">
+            <article class="slide" tabindex="0" role="button" aria-label="View details: MedCheck Role Selection">
               <img class="phone-shot" src="images/medcheck%20role%20pick.jpg" alt="MedCheck role selection screen">
               <div class="slide-info">
                 <h3>MedCheck: Role Selection</h3>
@@ -76,7 +76,7 @@
                 <p>Users choose Patient, Family / Caregiver, or Doctor. Caregiver and doctor accounts link to a patient using a Patient Code.</p>
               </div>
             </article>
-            <article class="slide">
+            <article class="slide" tabindex="0" role="button" aria-label="View details: MedCheck Patient Dashboard">
               <img class="phone-shot" src="images/medcheckPatientDashboard.jpg" alt="MedCheck patient dashboard screenshot">
               <div class="slide-info">
                 <h3>MedCheck: Patient Dashboard</h3>
@@ -84,7 +84,7 @@
                 <p>Shows the day's remaining and missed doses, adherence progress, and the medication schedule with a Take Late option.</p>
               </div>
             </article>
-            <article class="slide">
+            <article class="slide" tabindex="0" role="button" aria-label="View details: MedCheck Caregiver Dashboard">
               <img class="phone-shot" src="images/caregiver%20dashboard.jpg" alt="MedCheck caregiver dashboard screenshot">
               <div class="slide-info">
                 <h3>MedCheck: Caregiver Dashboard</h3>
@@ -94,7 +94,7 @@
             </article>
 
             <!-- Solo projects -->
-            <article class="slide">
+            <article class="slide" tabindex="0" role="button" aria-label="View details: D' Luxuries Point of Sale System">
               <img src="images/D%20Luxuries%201st%20year%20POS.jpg" alt="Screenshot of the D' Luxuries point-of-sale system">
               <div class="slide-info">
                 <h3>D' Luxuries: Point of Sale System</h3>
@@ -102,7 +102,7 @@
                 <p>A point-of-sale system for a Ferrari-inspired merchandise shop, with item selection, subtotal, tax, cash payment, change computation, and receipt printing.</p>
               </div>
             </article>
-            <article class="slide">
+            <article class="slide" tabindex="0" role="button" aria-label="View details: IAN STORE Point of Sale and Inventory System">
               <img src="images/Ian%20Store.jpg" alt="Screenshot of the IAN STORE inventory form">
               <div class="slide-info">
                 <h3>IAN STORE: Point of Sale and Inventory System</h3>
@@ -110,7 +110,7 @@
                 <p>A store system with inventory forms for adding, updating, and deleting products, plus search and stock tracking.</p>
               </div>
             </article>
-            <article class="slide">
+            <article class="slide" tabindex="0" role="button" aria-label="View details: Enrollment System">
               <img src="images/Enrollment%201.jpg" alt="Screenshot of the student enrollment system">
               <div class="slide-info">
                 <h3>Enrollment System</h3>
@@ -123,6 +123,21 @@
         </div>
       </div>
     </section>
+
+    <!-- PROJECT DETAILS POPUP -->
+    <dialog id="projectModal" class="project-modal" aria-labelledby="modalTitle">
+      <div class="modal-inner">
+        <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+        <div class="modal-img-wrap">
+          <img id="modalImg" src="" alt="">
+        </div>
+        <div class="modal-info">
+          <h3 id="modalTitle"></h3>
+          <p class="meta" id="modalMeta"></p>
+          <p id="modalDesc"></p>
+        </div>
+      </div>
+    </dialog>
 
     <!-- SKILLS -->
     <section id="skills">
