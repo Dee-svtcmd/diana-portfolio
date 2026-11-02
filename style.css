@@ -1,10 +1,10 @@
 /* COLOR PALETTE (taken from the photo) */
 :root {
-  --shirt-blue: #c7e0f3;   
-  --shirt-soft: #eaf4fb;   
-  --deep-blue:  #2f6ea5;   
-  --hair-navy:  #141b2d;   
-  --rose:       #b06867;   
+  --shirt-blue: #c7e0f3;
+  --shirt-soft: #eaf4fb;
+  --deep-blue:  #2f6ea5;
+  --hair-navy:  #141b2d;
+  --rose:       #b06867;
   --white:      #ffffff;
   --radius-lg:  28px;
   --radius-pill: 999px;
@@ -100,6 +100,41 @@ li { margin-bottom: 6px; }
   border-radius: var(--radius-pill); font-size: 14px;
 }
 
+/* PROJECT SHOWCASE: continuous marquee */
+.showcase { max-width: none; padding: 56px 0; }
+.showcase-head { max-width: 900px; margin: 0 auto; padding: 0 6%; }
+.showcase-head h2 { margin-bottom: 18px; }
+
+.marquee {
+  overflow: hidden;
+  padding: 10px 0 24px;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+.marquee-track {
+  display: flex; width: max-content;
+  animation: marquee-left 70s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-set { display: flex; gap: 20px; padding-right: 20px; }
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.slide {
+  flex: 0 0 320px;
+  background: var(--white); border-radius: var(--radius-lg);
+  box-shadow: var(--soft-shadow); border: 1px solid var(--shirt-blue);
+  overflow: hidden;
+}
+.slide img { width: 100%; height: 200px; object-fit: cover; display: block; background: var(--shirt-soft); }
+.slide img.phone-shot { height: 340px; object-fit: contain; padding: 12px; }
+.slide-info { padding: 20px 22px; }
+.slide-info h3 { font-size: 17px; margin-bottom: 4px; }
+.slide-info p:last-child { margin-bottom: 0; }
+@media (min-width: 900px) { .slide { flex: 0 0 380px; } .slide img { height: 240px; } }
+
 /* FADE-IN (used by script.js) */
 .hidden { opacity: 0; transform: translateY(20px); }
 .show { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s ease; }
@@ -125,4 +160,10 @@ footer p { margin: 0; }
   .hero { text-align: center; border-radius: 0 0 36px 36px; }
   .hero-text .btn { margin-top: 8px; }
   .photo { width: 200px; height: 200px; }
+}
+
+/* Users who turn off motion get a plain, swipeable row instead */
+@media (prefers-reduced-motion: reduce) {
+  .marquee { overflow-x: auto; }
+  .marquee-track { animation: none; }
 }

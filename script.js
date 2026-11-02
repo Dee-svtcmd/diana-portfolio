@@ -40,3 +40,12 @@ window.addEventListener("scroll", function () {
     a.classList.toggle("active", a.getAttribute("href") === "#" + current);
   });
 });
+
+// 5. Make the marquee loop seamlessly: copy the first set so the second half matches the first
+const track = document.getElementById("marqueeTrack");
+if (track) {
+  const firstSet = track.querySelector(".marquee-set");
+  const copy = firstSet.cloneNode(true);
+  copy.setAttribute("aria-hidden", "true");
+  track.appendChild(copy);
+}
